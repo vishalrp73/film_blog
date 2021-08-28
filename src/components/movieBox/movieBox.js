@@ -12,6 +12,7 @@ const MovieBox = (props) => {
     const [rand, setRand] = useState('');
     const [trivia, setTrivia] = useState('');
     const [paragraph, setParagraph] = useState([])
+    const [actors, setActors] = useState([])
 
     useEffect(() => {
         setMovie(props.movie);
@@ -33,23 +34,13 @@ const MovieBox = (props) => {
         setRand(film.img_bank[num])
         setTrivia(film.trivia[trivNum])
         setParagraph(film.review_text.split('\n'))
+        console.log(film.notable_actors)
 
     }
 
     const handleClose = () => {
         setOpen(false);
     }
-
-    const renderInterior = (id) => {
-        let x = document.getElementsByClassName(id)
-        console.log(x[0])
-    }
-
-    const cancelInterior = (id) => {
-        let x = document.getElementsByClassName(id)
-        console.log(x[0])
-    }
-
 
 
     return (
@@ -71,32 +62,60 @@ const MovieBox = (props) => {
         
             <Modal className = 'mui-modal' open = {open} onClose = {() => handleClose()} style = {{backgroundImage: `url(${rand})`}} >
                 <div className = 'modal-wrapper'>
+
+                    <h1 className = 'close-modal' onClick = {() => handleClose() }>X</h1>
                     
                     <div className = 'iframe-container'>
                         <iframe src = {film.trailer + `?&amp;rel=0&amp;autoplay=1&amp;controls=1&amp;modestbranding=1&amp;iv_load_policy=3`}
                         allowFullScreen = 'true' title = 'video' frameborder = '0' className = 'trailer-wrapper' allow = 'autoplay; encrypted-media' />
                     </div>
 
-                    <h1 className = 'title-text'>{film.title}</h1>
-                    <h2>Directed by: {film.director}</h2>
-                    <h3>{film.year}</h3>
-                    <p>Runtime: {} | Genres: {} | Special Category: {}</p>
-                    <p>Writer(s): {film.writers}</p>
-                    <p>Cinematography: {film.cinematography} | Soundtrack: {film.soundtrack}</p>
-                    <p>{film.notable_actors}</p>
+                {/* DELETE FROM HERE AND SAVE TO PREVENT MAP ERRORS */ }
 
-                    <p>{film.blurb}</p>
+                    <div className = 'title-wrapper' >
+                        <h1 className = 'title-text'>{film.title}</h1>
+                        <h2 className = 'director-text'>Directed by: {film.director}</h2>
+                        <h3 className = 'year-text'>{film.year}</h3>
+                    </div>
+                    
+                    <div className = 'detail-wrapper'>
+                        <p className = 'middle-bar-text'>Runtime: {film.runtime} || Genre(s): {film.genre.map(gen => (<>{gen}, </>))}</p>
+                        <p className = 'trivia-text'><span id = 'color-trivia'>RANDOM TRIVIA:</span><br/>{trivia}</p>
 
-                    <p>{trivia}</p>
+                        <div className = 'actor-wrapper' >
+                            <p className = 'notable_act-text'>NOTABLE ACTORS:</p>
+                            {
+                                film.notable_actors.map(actor => (
+                                    <>
+                                        <p className = 'actor-text'>{actor}</p>
+                                    </>
+                                ))
+                            }
+                        </div>
 
-                    <h4>{film.review_img}</h4>
+                        <p className = 'crew-text'>Writer(s): {film.writers.map(writer => (<>{writer}, </>))} <br/> Cinematography: {film.cinematography.map(crew => (<>{crew}, </>))} <br/> Soundtrack: {film.soundtrack.map(artist => (<>{artist}, </>))}</p>
+
+                        <p className = 'special_cat-text'>CATEGORIES: {film.special_category.map(cat => (<>{cat}, </>))}</p>
+
+                        <p className = 'blurb-text'>{film.blurb}</p>
+                    </div>
+                    
+
+                    <h4 className = 'review-img-text'>{film.review_img}</h4>
+
+                    <div className = 'review-wrapper'>
                     {
                         paragraph.map(text => (
                             <>
-                            <p>{text}</p>
+                            <p className = 'review-para-text'>{text}</p><br />
                             </>
                         ))
                     }
+                    </div>
+
+
+
+                    {/* END OF DELETE PORTION*/}
                     
                 </div>
             </Modal>

@@ -17,17 +17,17 @@ const GenreSorter = () => {
     const [epic, setEpic] = useState([]);
     const [crime, setCrime] = useState([]);
     const [animated, setAnimated] = useState([]);
-    const [psych, setPsych] = useState([]);
     const [art, setArt] = useState([]);
+    const [biography, setBiography] = useState([]);
     const [neoNoir, setNeoNoir] = useState([]);
     const [mystery, setMystery] = useState([]);
     const [romance, setRomance] = useState([]);
     const [action, setAction] = useState([]);
     const [adventure, setAdventure] = useState([]);
-    const [fantasy, setFantasy] = useState([]);
-    const [samurai, setSamurai] = useState([]);
+
     const [silent, setSilent] = useState([]);
     const [wholesome, setWholesome] = useState([]);
+    const [surreal, setSurreal] = useState([]);
 
     const [top, setTop] = useState([]);
     const [denSco, setDenSco] = useState([]);
@@ -45,17 +45,16 @@ const GenreSorter = () => {
     let epicList = []
     let crimeList = []
     let animatedList = []
-    let psychList = []
     let artList = []
     let neoNoirList = []
     let mysteryList = []
     let romanceList = []
     let actionList = []
     let adventureList = []
-    let fantasyList = []
-    let samuraiList = []
+    let bioList = []
     let silentList = []
     let wholesomeList = []
+    let surrealList = []
 
     useEffect(() => {
         fetch ('http://localhost:4000/films')
@@ -84,8 +83,6 @@ const GenreSorter = () => {
                 crimeList.push(film.title)
             } if (item === 'Animated') {
                 animatedList.push(film.title)
-            } if (item === 'Psychological') {
-                psychList.push(film.title)
             } if (item === 'Art') {
                 artList.push(film.title)
             } if (item === 'Neo-Noir') {
@@ -98,14 +95,14 @@ const GenreSorter = () => {
                 actionList.push(film.title)
             } if (item === 'Adventure') {
                 adventureList.push(film.title)
-            } if (item === 'Fantasy') {
-                fantasyList.push(film.title)
-            } if (item === 'Samurai') {
-                samuraiList.push(film.title)
+            } if (item === 'Biographical') {
+                bioList.push(film.title)
             } if (item === 'Silent') {
                 silentList.push(film.title)
             } if (item === 'Wholesome') {
                 wholesomeList.push(film.title)
+            } if (item === 'Surreal') {
+                surrealList.push(film.title)
             }
          }))
 
@@ -130,17 +127,16 @@ const GenreSorter = () => {
         setEpic(epicList)
         setCrime(crimeList)
         setAnimated(animatedList)
-        setPsych(psychList)
         setArt(artList)
         setNeoNoir(neoNoirList)
         setMystery(mysteryList)
+        setBiography(bioList)
         setRomance(romanceList)
         setAction(actionList)
         setAdventure(adventureList)
-        setFantasy(fantasyList)
-        setSamurai(samuraiList)
         setSilent(silentList)
         setWholesome(wholesomeList)
+        setSurreal(surrealList)
 
         let genObject = {
             "TOP 5": top,
@@ -154,16 +150,15 @@ const GenreSorter = () => {
             "Science Fiction": scifi,
             "War": war,
             "Neo-Noir": neoNoir,
-            "Action": action,
+            "Biographical": biography,
             "Mystery": mystery,
-            "Psychological Thriller": psych,
+            "Surreal": surreal,
+            "Action": action,
             "Animated": animated,
             "Romance": romance,
             "Adventure": adventure,
             "Horror": horror,
             "Art": art,
-            "Fantasy": fantasy,
-            "Samurai": samurai,
             "Silent": silent,
             "Wholesome": wholesome
         }

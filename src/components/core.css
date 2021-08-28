@@ -4,6 +4,9 @@
     flex-direction: column;
     background-color: rgb(21, 21, 21);
     margin: 50px 0px;
+    border-top-style: groove;
+    border-top-width: 5px;
+    border-top-color: rgb(255, 0, 162);
 }
 
 .display-genre-wrapper {
