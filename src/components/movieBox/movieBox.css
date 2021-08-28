@@ -1,0 +1,80 @@
+.entire-box-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.movie-box-wrapper {
+    min-width: 300px;
+    max-width: 300px;
+    height: 150px;
+    border: 1px solid orange;
+    border-radius: 8px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 12px;
+    background-size: cover;
+}
+
+.movie-box-wrapper:hover {
+    border: 5px dashed white;
+    background-size: contain;
+    background-position: center;
+    transition: border 0.1s;
+    transition-timing-function: ease-in;
+}
+
+#info-box-wrapper {
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.mui-modal {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-size: cover;
+}
+
+
+.modal-wrapper {
+    color: white;
+    width: 60%;
+    height: 85%;
+    padding: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid white;
+    margin: auto;
+    border-radius: 20px;
+    text-align: center;
+    overflow: scroll;
+    outline: none;
+}
+
+.trailer-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    border-radius: 12px;
+}
+
+.iframe-container {
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+    padding-top: 50%;
+    border-radius: 12px;
+}
+
+.title-text {
+    font-size: 60px;
+    color: rgb(255, 0, 162);
+}
