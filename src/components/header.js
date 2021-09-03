@@ -12,11 +12,22 @@ const Header = (props) => {
     const [results, setResults] = useState([])
     const [films, setFilms] = useState(props.films)
     const [genres, setGenres] = useState(props.genres)
+    const [num, setNum] = useState(0);
+
+    const backImgList = [
+        "https://film-img.s3.ap-southeast-2.amazonaws.com/slides/apoc-8.png", "https://film-img.s3.ap-southeast-2.amazonaws.com/slides/julia-fox.jpg"
+    ]
 
     useEffect(() => {
         setFilms(props.films)
         setGenres(props.genres)
+
     }, [props])
+
+    useEffect(() => {
+        let randomNum = Math.floor(Math.random() * backImgList.length - 0)
+        setNum(randomNum)
+    }, [])
 
 
     useEffect(() => {
@@ -36,8 +47,9 @@ const Header = (props) => {
     }
 
     return (
-        <div className = 'header-wrapper'>
-
+        <div className = 'header-wrapper'  >
+            
+            <div className = 'title-wrap' style={{backgroundImage: `url(${backImgList[num]})` }} >
                 <h1 className = 'header-title'>VISHAL'S PRETENTIOUS FILM BLOG</h1>
 
                 <p className = 'intro-text'>Howdy friends !<br />
@@ -47,9 +59,10 @@ const Header = (props) => {
                 </p>
 
                 <div className = 'search-wrapper'>
-                    <input type = 'text' className = 'search-box' onChange = {(e) => setSearchTerm(e.target.value)} />
-                    <input type = 'button' className = 'sort-btn' value = 'year' onClick  = {(e) => handleSort(e.target.value)} />
+                    <input type = 'text' className = 'search-box' onChange = {(e) => setSearchTerm(e.target.value)} placeholder = 'Search for a title ... ' />
+                    {/* <input type = 'button' className = 'sort-btn' value = 'year' onClick  = {(e) => handleSort(e.target.value)} /> */}
                 </div>
+            </div>
 
 
             <Core display = {results} films = {films} search = {searchTerm} genres = {genres} />

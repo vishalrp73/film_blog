@@ -115,6 +115,7 @@ const GenreSorter = () => {
             }
         }))
 
+
         setTop(topList)
         setDenSco(deniroScorsese)
         setWar(warList)

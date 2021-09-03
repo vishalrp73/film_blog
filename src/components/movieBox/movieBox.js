@@ -70,13 +70,15 @@ const MovieBox = (props) => {
                         allowFullScreen = 'true' title = 'video' frameborder = '0' className = 'trailer-wrapper' allow = 'autoplay; encrypted-media' />
                     </div>
 
-                {/* DELETE FROM HERE AND SAVE TO PREVENT MAP ERRORS */ }
+                
 
                     <div className = 'title-wrapper' >
                         <h1 className = 'title-text'>{film.title}</h1>
                         <h2 className = 'director-text'>Directed by: {film.director}</h2>
                         <h3 className = 'year-text'>{film.year}</h3>
                     </div>
+
+                    {/* DELETE FROM HERE AND SAVE TO PREVENT ERRORS */ }
                     
                     <div className = 'detail-wrapper'>
                         <p className = 'middle-bar-text'>Runtime: {film.runtime} || Genre(s): {film.genre.map(gen => (<>{gen}, </>))}</p>
@@ -113,9 +115,7 @@ const MovieBox = (props) => {
                     }
                     </div>
 
-
-
-                    {/* END OF DELETE PORTION*/}
+                    {/* ^^^ END OF DELETE PORTION ^^^ */}
                     
                 </div>
             </Modal>
