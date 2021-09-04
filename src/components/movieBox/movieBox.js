@@ -91,10 +91,6 @@ const MovieBox = (props) => {
                         <h2 className = 'director-text'>Directed by: {film.director}</h2>
                         <h3 className = 'year-text'>{film.year}</h3>
                     </div>
-
-                    {/* DELETE FROM HERE AND SAVE TO PREVENT ERRORS */ }
-
-
                     
                     <div className = 'detail-wrapper'>
                         <p className = 'middle-bar-text'>Runtime: {film.runtime} || Genre(s): {genres.map(item => (<>{item}, </>))}</p>
@@ -130,8 +126,6 @@ const MovieBox = (props) => {
                         ))
                     }
                     </div>
-
-                    {/* ^^^ END OF DELETE PORTION ^^^ */}
                     
                 </div>
             </Modal>
