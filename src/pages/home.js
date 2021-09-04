@@ -1,15 +1,14 @@
 import './pageCSS/home.css';
 
 import Header from '../components/header';
-import Core from '../components/core';
 
 const Home = (props) => {
 
-
+console.log(props)
 
     return (
         <div className = 'home-wrapper'>
-            <Header genres = {props.genres} films = {props.films} />
+            <Header genres = {props.genres} films = {props.films} alphaSort = {props.alphaSort} years = {props.years} />
 
         </div>
     )

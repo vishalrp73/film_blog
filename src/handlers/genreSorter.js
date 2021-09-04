@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 
-import Home from '../pages/home';
+import AlphabetSort from '../components/alphabetSorter/alphaSort';
 
 const GenreSorter = () => {
+    
 
     const [films, setFilms] = useState([])
     const [genres, setGenres] = useState({})
@@ -173,7 +174,7 @@ const GenreSorter = () => {
 
     return (
         <>
-            <Home genres = {genres} films = {films} />
+            <AlphabetSort genres = {genres} films = {films} />
         </>
     )
 }

@@ -1,18 +1,21 @@
 import './header.css';
 import Fuse from 'fuse.js';
 import Core from '../components/core';
-import YearSort from './yearSort/yearSort';
+
 
 import { useState, useEffect } from 'react';
 
 const Header = (props) => {
 
-
     const [searchTerm, setSearchTerm] = useState('')
     const [results, setResults] = useState([])
     const [films, setFilms] = useState(props.films)
     const [genres, setGenres] = useState(props.genres)
+    const [years, setYears] = useState(props.years)
     const [num, setNum] = useState(0);
+    const [alpha, setAlpha] = useState({})
+    const [sort, setSort] = useState(false)
+    const [randFilm, setRandFilm] = useState(0)
 
     const backImgList = [
         "https://film-img.s3.ap-southeast-2.amazonaws.com/slides/apoc-8.png", "https://film-img.s3.ap-southeast-2.amazonaws.com/slides/julia-fox.jpg"
@@ -21,12 +24,17 @@ const Header = (props) => {
     useEffect(() => {
         setFilms(props.films)
         setGenres(props.genres)
+        setAlpha(props.alphaSort)
+        setYears(props.years)
 
     }, [props])
 
     useEffect(() => {
         let randomNum = Math.floor(Math.random() * backImgList.length - 0)
         setNum(randomNum)
+
+        let filmNum = Math.floor(Math.random() * 50 - 0)
+        setRandFilm(filmNum)
     }, [])
 
 
@@ -42,8 +50,16 @@ const Header = (props) => {
 
     }, [searchTerm])
 
-    const handleSort = (sort) => {
-        console.log(sort)
+    const handleAlphaSort = () => {
+        setSort(1)
+    }
+
+    const handleYearSort = () => {
+        setSort(2)
+    }
+
+    const handleReset = () => {
+        setSort(false)
     }
 
     return (
@@ -59,13 +75,15 @@ const Header = (props) => {
                 </p>
 
                 <div className = 'search-wrapper'>
-                    <input type = 'text' className = 'search-box' onChange = {(e) => setSearchTerm(e.target.value)} placeholder = 'Search for a title ... ' />
-                    {/* <input type = 'button' className = 'sort-btn' value = 'year' onClick  = {(e) => handleSort(e.target.value)} /> */}
+                    <input type = 'text' className = 'search-box' onChange = {(e) => setSearchTerm(e.target.value)} placeholder = {`Search for a title e.g... ${films[randFilm].title}`} />
+                    <input type = 'button' className = 'sort-btn' value = 'a-z' onClick  = {() => handleAlphaSort()} />
+                    <input type = 'button' className = 'sort-btn' value = 'year' onClick = {() => handleYearSort()} />
+                    <input type = 'button' className = 'sort-btn' value = 'reset' onClick = {() => handleReset()} />
                 </div>
             </div>
 
 
-            <Core display = {results} films = {films} search = {searchTerm} genres = {genres} />
+            <Core display = {results} films = {films} search = {searchTerm} genres = {genres} alphaSort = {alpha} sort = {sort} years = {years} />
 
         </div>
     )

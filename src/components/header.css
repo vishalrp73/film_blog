@@ -55,3 +55,10 @@
     outline-style: auto;
     outline-color: rgb(255, 0, 162);
 }
+
+.sort-btn {
+    width: 50px;
+    border: 3px double rgb(25, 0, 255);
+    border-radius: 8px;
+    margin: 0px 5px;
+}
