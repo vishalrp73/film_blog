@@ -11,8 +11,14 @@ const MovieBox = (props) => {
     const [open, setOpen] = useState(false);
     const [rand, setRand] = useState('');
     const [trivia, setTrivia] = useState('');
-    const [paragraph, setParagraph] = useState([])
-    const [actors, setActors] = useState([])
+    const [paragraph, setParagraph] = useState([]);
+    const [genres, setGenres] = useState([]);
+    const [actors, setActors] = useState([]);
+    const [writers, setWriters] = useState([]);
+    const [cinemat, setCinemat] = useState([]);
+    const [soundt, setSoundt] = useState([]);
+    const [specCat, setSpecCat] = useState([]);
+
 
     useEffect(() => {
         setMovie(props.movie);
@@ -26,6 +32,10 @@ const MovieBox = (props) => {
 
     }, [props])
 
+    useEffect(() => {
+
+    }, [film])
+
     
     const handleOpen = (film) => {
         setOpen(true);
@@ -34,8 +44,12 @@ const MovieBox = (props) => {
         setRand(film.img_bank[num])
         setTrivia(film.trivia[trivNum])
         setParagraph(film.review_text.split('\n'))
-        console.log(film.notable_actors)
-
+        setGenres(film.genre)
+        setActors(film.notable_actors)
+        setWriters(film.writers)
+        setCinemat(film.cinematography)
+        setSoundt(film.soundtrack)
+        setSpecCat(film.special_category)
     }
 
     const handleClose = () => {
@@ -79,25 +93,27 @@ const MovieBox = (props) => {
                     </div>
 
                     {/* DELETE FROM HERE AND SAVE TO PREVENT ERRORS */ }
+
+
                     
                     <div className = 'detail-wrapper'>
-                        <p className = 'middle-bar-text'>Runtime: {film.runtime} || Genre(s): {film.genre.map(gen => (<>{gen}, </>))}</p>
+                        <p className = 'middle-bar-text'>Runtime: {film.runtime} || Genre(s): {genres.map(item => (<>{item}, </>))}</p>
                         <p className = 'trivia-text'><span id = 'color-trivia'>RANDOM TRIVIA:</span><br/>{trivia}</p>
 
-                        <div className = 'actor-wrapper' >
+                        <div className = 'actor-wrapper'>
                             <p className = 'notable_act-text'>NOTABLE ACTORS:</p>
                             {
-                                film.notable_actors.map(actor => (
+                                actors.map(actor => (
                                     <>
-                                        <p className = 'actor-text'>{actor}</p>
+                                        <p className = 'actor-text'>{ actor }</p>
                                     </>
                                 ))
                             }
                         </div>
 
-                        <p className = 'crew-text'>Writer(s): {film.writers.map(writer => (<>{writer}, </>))} <br/> Cinematography: {film.cinematography.map(crew => (<>{crew}, </>))} <br/> Soundtrack: {film.soundtrack.map(artist => (<>{artist}, </>))}</p>
+                        <p className = 'crew-text'>Writers(s): {writers.map(writer => (<>{writer}, </>))} <br /> Cinematography: {cinemat.map(artist => (<>{artist}, </>))} <br /> Soundtrack: {soundt.map(artist => (<>{artist}, </>))}</p>
 
-                        <p className = 'special_cat-text'>CATEGORIES: {film.special_category.map(cat => (<>{cat}, </>))}</p>
+                        <p className = 'special_cat-text'>CATEGORIES: {specCat.map(cat => (<>{cat}, </>))}</p>
 
                         <p className = 'blurb-text'>{film.blurb}</p>
                     </div>
@@ -109,7 +125,7 @@ const MovieBox = (props) => {
                     {
                         paragraph.map(text => (
                             <>
-                            <p className = 'review-para-text'>{text}</p><br />
+                            <p className = 'review-para-text'>{text}</p>
                             </>
                         ))
                     }
