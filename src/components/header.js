@@ -15,7 +15,8 @@ const Header = (props) => {
     const [num, setNum] = useState(0);
     const [alpha, setAlpha] = useState({})
     const [sort, setSort] = useState(false)
-    const [randFilm, setRandFilm] = useState(0)
+    const [randNum, setRandNum] = useState(0);
+    const [placeFilm, setPlaceFilm] = useState('');
 
     const backImgList = [
         "https://film-img.s3.ap-southeast-2.amazonaws.com/slides/apoc-8.png", "https://film-img.s3.ap-southeast-2.amazonaws.com/slides/julia-fox.jpg"
@@ -26,6 +27,7 @@ const Header = (props) => {
         setGenres(props.genres)
         setAlpha(props.alphaSort)
         setYears(props.years)
+        setPlaceFilm(films[randNum])
 
     }, [props])
 
@@ -34,7 +36,8 @@ const Header = (props) => {
         setNum(randomNum)
 
         let filmNum = Math.floor(Math.random() * 50 - 0)
-        setRandFilm(filmNum)
+        setRandNum(filmNum)
+
     }, [])
 
 
@@ -75,7 +78,7 @@ const Header = (props) => {
                 </p>
 
                 <div className = 'search-wrapper'>
-                    <input type = 'text' className = 'search-box' onChange = {(e) => setSearchTerm(e.target.value)} placeholder = {`Search for a title e.g... ${films[randFilm].title}`} />
+                    <input type = 'text' className = 'search-box' onChange = {(e) => setSearchTerm(e.target.value)} placeholder = {`Search for a title...`} />
                     <input type = 'button' className = 'sort-btn' value = 'a-z' onClick  = {() => handleAlphaSort()} />
                     <input type = 'button' className = 'sort-btn' value = 'year' onClick = {() => handleYearSort()} />
                     <input type = 'button' className = 'sort-btn' value = 'reset' onClick = {() => handleReset()} />

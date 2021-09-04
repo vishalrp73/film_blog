@@ -58,7 +58,15 @@
 
 .sort-btn {
     width: 50px;
-    border: 3px double rgb(25, 0, 255);
+    border: 3px double rgb(255, 255, 255);
+    color: white;
     border-radius: 8px;
     margin: 0px 5px;
+    background-color: rgb(40, 40, 40);
+}
+
+.sort-btn:hover {
+    border: 3px double rgb(255, 0, 162);
+    background-color: rgb(80, 80, 80);
+    color: rgb(222, 222, 222);
 }

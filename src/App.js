@@ -1,12 +1,12 @@
 import './App.css';
-import GenreSorter from './handlers/genreSorter';
+import FilmSort from './handlers/filmSort';
 
 function App() {
 
 
   return (
     <div className="App">
-        <GenreSorter />
+        <FilmSort />
     </div>
   );
 }
