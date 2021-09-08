@@ -4,7 +4,7 @@ import Header from '../components/header';
 
 const Home = (props) => {
 
-console.log(props)
+
 
     return (
         <div className = 'home-wrapper'>

@@ -12,6 +12,7 @@ const Core = (props) => {
     const [alphaList, setAlphaList] = useState({});
     const [sort, setSort] = useState(false);
     const [years, setYears] = useState({});
+    const [randFilm, setRandFilm] = useState({});
 
 
     useEffect(() => {
@@ -25,7 +26,11 @@ const Core = (props) => {
 
     }, [props])
 
-    console.log(films)
+    useEffect(() => {
+        let randomNum = Math.floor(Math.random() * films.length - 0)
+        setRandFilm(films[randomNum].title)
+
+    }, [sort])
 
 
 
@@ -72,7 +77,7 @@ const Core = (props) => {
                                                             </div>
                                                         ))
                                                         
-                                                        : console.log('ERROR: Films not found')
+                                                        : (sort == 3) ? <><MovieBox movie = {randFilm} films = {films} /></> : console.log('ERROR: Films not found')
 
                 :
                 <div className = 'display-results-wrapper'>

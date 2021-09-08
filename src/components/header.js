@@ -65,6 +65,10 @@ const Header = (props) => {
         setSort(false)
     }
 
+    const handleRandom = () => {
+        setSort(3)
+    }
+
     return (
         <div className = 'header-wrapper'  >
             
@@ -78,10 +82,11 @@ const Header = (props) => {
                 </p>
 
                 <div className = 'search-wrapper'>
+                    <input type = 'button' className = 'sort-btn' value = 'reset' onClick = {() => handleReset()} />
                     <input type = 'text' className = 'search-box' onChange = {(e) => setSearchTerm(e.target.value)} placeholder = {`Search for a title...`} />
                     <input type = 'button' className = 'sort-btn' value = 'a-z' onClick  = {() => handleAlphaSort()} />
                     <input type = 'button' className = 'sort-btn' value = 'year' onClick = {() => handleYearSort()} />
-                    <input type = 'button' className = 'sort-btn' value = 'reset' onClick = {() => handleReset()} />
+                    <input type = 'button' className = 'sort-btn' id = 'feeling-stupid' value = "I'M FEELING STUPID" onClick = {() => handleRandom()} />
                 </div>
             </div>
 
