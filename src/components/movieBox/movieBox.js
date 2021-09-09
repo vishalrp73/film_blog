@@ -32,10 +32,6 @@ const MovieBox = (props) => {
 
     }, [props])
 
-    useEffect(() => {
-
-    }, [film])
-
     
     const handleOpen = (film) => {
         setOpen(true);
@@ -115,7 +111,7 @@ const MovieBox = (props) => {
                     </div>
                     
 
-                    <h4 className = 'review-img-text'>{film.review_img}</h4>
+                    <h4 className = 'review-img-text'>{film.review_score} / 10</h4>
 
                     <div className = 'review-wrapper'>
                     {

@@ -28,7 +28,8 @@ const Core = (props) => {
 
     useEffect(() => {
         let randomNum = Math.floor(Math.random() * films.length - 0)
-        setRandFilm(films[randomNum].title)
+        /* let temp = films[randomNum].title
+        setRandFilm(temp) */
 
     }, [sort])
 
