@@ -28,8 +28,14 @@ const Core = (props) => {
 
     useEffect(() => {
         let randomNum = Math.floor(Math.random() * films.length - 0)
-        /* let temp = films[randomNum].title
-        setRandFilm(temp) */
+        let temp = '';
+        try {
+            let temp  = films[randomNum].title
+            setRandFilm(temp)
+        } catch (error) {
+            console.log(error)
+        }
+        
 
     }, [sort])
 
@@ -46,7 +52,7 @@ const Core = (props) => {
                                             Object.entries(genList).map(genre => (
                                                 <div className = 'display-genre-wrapper'>
                                                     <h1 className = 'genre-title'>{genre[0]}</h1>
-                                                    <div className = 'genre-list-wrapper'>
+                                                    <div className = 'genre-list-wrapper' id  = 'gen-list__id'>
                                                     {
                                                         genre[1].map(title => (<MovieBox movie = {title} films = {films} />))
                                                     }
@@ -57,9 +63,9 @@ const Core = (props) => {
                                     : (sort == 1) ?
                                     
                                                 Object.entries(alphaList).map(letter => (
-                                                    <div className = 'display-genre-wrapper'>
+                                                    <div className = 'display-genre-wrapper' >
                                                         <h1 className = 'genre-title'>{letter[0]}</h1>
-                                                        <div className = 'genre-list-wrapper'>
+                                                        <div className = 'genre-list-wrapper' id  = 'gen-list__id'>
                                                             {   
                                                                 letter[1].map(title => (<MovieBox movie = {title} films = {films} />))
                                                             }
@@ -68,9 +74,9 @@ const Core = (props) => {
                                                 )) : (sort == 2) ?
 
                                                         Object.entries(years).map(decade => (
-                                                            <div className = 'display-genre-wrapper'>
+                                                            <div className = 'display-genre-wrapper' >
                                                                 <h1 className = 'genre-title'>{decade[0]}</h1>
-                                                                <div className = 'genre-list-wrapper'>
+                                                                <div className = 'genre-list-wrapper' id  = 'gen-list__id'>
                                                                     {
                                                                         decade[1].map(title => (<MovieBox movie = {title} films = {films} />))
                                                                     }

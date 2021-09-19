@@ -44,7 +44,7 @@ const Header = (props) => {
     useEffect(() => {
 
         const fuse = new Fuse(films, {
-            keys: ['title', 'director', 'year', 'writers', 'genre', 'cinematography', 'soundtrack', 'blurb', 'tags', 'trivia', 'review_text', 'review_img', 'special_category'],
+            keys: ['title', 'director', 'year', 'writers', 'genre', 'cinematography', 'soundtrack', 'blurb', 'tags', 'trivia', 'review_text', 'review_score', 'special_category'],
             includeScore: true, threshold: 0.2, ignoreLocation: true
         })
 
@@ -63,6 +63,7 @@ const Header = (props) => {
 
     const handleReset = () => {
         setSort(false)
+        setSearchTerm('')
     }
 
     const handleRandom = () => {
@@ -81,11 +82,11 @@ const Header = (props) => {
                     Additionally, I manually screencapped and photoshopped each thumbnail image - so be impressed of my all-round front-end/UX expertise 😁
                 </p>
 
-                <div className = 'search-wrapper'>
-                    <input type = 'button' className = 'sort-btn' value = 'reset' onClick = {() => handleReset()} />
+                <div className = 'search-wrapper' id = 'search__id'>
+                    <input type = 'button' className = 'sort-btn' value = 'reset' onClick = {() => handleReset()} id = 'btn__id' />
                     <input type = 'text' className = 'search-box' onChange = {(e) => setSearchTerm(e.target.value)} placeholder = {`Search for a title...`} />
-                    <input type = 'button' className = 'sort-btn' value = 'a-z' onClick  = {() => handleAlphaSort()} />
-                    <input type = 'button' className = 'sort-btn' value = 'year' onClick = {() => handleYearSort()} />
+                    <input type = 'button' className = 'sort-btn' value = 'a-z' onClick  = {() => handleAlphaSort()} id = 'btn__id' />
+                    <input type = 'button' className = 'sort-btn' value = 'year' onClick = {() => handleYearSort()} id = 'btn__id' />
                     <input type = 'button' className = 'sort-btn' id = 'feeling-stupid' value = "I'M FEELING STUPID" onClick = {() => handleRandom()} />
                 </div>
             </div>

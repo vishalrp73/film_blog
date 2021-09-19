@@ -1,5 +1,6 @@
 import './movieBox.css';
 import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 import Modal from '@material-ui/core/Modal';
 
@@ -19,6 +20,12 @@ const MovieBox = (props) => {
     const [soundt, setSoundt] = useState([]);
     const [specCat, setSpecCat] = useState([]);
 
+    const [comment, setComment] = useState('');
+    const [commentId, setCommentId] = useState();
+    const [commentName, setCommentName] = useState('');
+
+    const [commentList, setCommentList] = useState([]);
+
 
     useEffect(() => {
         setMovie(props.movie);
@@ -35,22 +42,57 @@ const MovieBox = (props) => {
     
     const handleOpen = (film) => {
         setOpen(true);
-        let num = Math.floor(Math.random() * film.img_bank.length - 0)
-        let trivNum = Math.floor(Math.random() * film.trivia.length - 0)
-        setRand(film.img_bank[num])
-        setTrivia(film.trivia[trivNum])
-        setParagraph(film.review_text.split('\n'))
-        setGenres(film.genre)
-        setActors(film.notable_actors)
-        setWriters(film.writers)
-        setCinemat(film.cinematography)
-        setSoundt(film.soundtrack)
-        setSpecCat(film.special_category)
+        try {
+            let num = Math.floor(Math.random() * film.img_bank.length - 0)
+            let trivNum = Math.floor(Math.random() * film.trivia.length - 0)
+            let order = (film.comment.reverse())
+            setRand(film.img_bank[num])
+            setTrivia(film.trivia[trivNum])
+            setParagraph(film.review_text.split('\n'))
+            setGenres(film.genre)
+            setActors(film.notable_actors)
+            setWriters(film.writers)
+            setCinemat(film.cinematography)
+            setSoundt(film.soundtrack)
+            setSpecCat(film.special_category)
+            setCommentList(order)
+        } catch (error) {
+            console.log(error)
+        }
+        
+       
     }
 
     const handleClose = () => {
         setOpen(false);
     }
+
+    const commentSetter = (event) => {
+        setComment(event.target.value)
+        setCommentId(event.target.id)
+    }
+
+    const commentNameSetter = (event) => {
+        setCommentName(event.target.value)
+    }
+
+    const handlePost = () => {
+        axios.post ('http://localhost:4000/postComment', {
+            addComment: comment,
+            id: commentId,
+            name: commentName
+        })
+        .then (response => {
+            if (response.status === 200) {
+                console.log('Posted comment')
+            }
+        })
+        .catch (() => console.log('Unsuccessful comment post'))
+
+    }
+
+    
+
 
 
     return (
@@ -73,7 +115,10 @@ const MovieBox = (props) => {
             <Modal className = 'mui-modal' open = {open} onClose = {() => handleClose()} style = {{backgroundImage: `url(${rand})`}} >
                 <div className = 'modal-wrapper'>
 
-                    <h1 className = 'close-modal' onClick = {() => handleClose() }>X</h1>
+                    <div className = 'top-wrap'>
+                        <h1 className = 'title-text'>{film.title}</h1>
+                        <h1 className = 'close-modal' onClick = {() => handleClose() }>X</h1>
+                    </div>
                     
                     <div className = 'iframe-container'>
                         <iframe src = {film.trailer + `?&amp;rel=0&amp;autoplay=1&amp;controls=1&amp;modestbranding=1&amp;iv_load_policy=3`}
@@ -83,9 +128,29 @@ const MovieBox = (props) => {
                 
 
                     <div className = 'title-wrapper' >
-                        <h1 className = 'title-text'>{film.title}</h1>
                         <h2 className = 'director-text'>Directed by: {film.director}</h2>
                         <h3 className = 'year-text'>{film.year}</h3>
+                    </div>
+
+                    <div className = 'comment-wrapper'>
+                        
+                        <div className = 'comment-input-wrap'>
+                            <input type = 'text' className = 'comment-name-input' placeholder = 'name' onChange = {(e) => commentNameSetter(e)} />
+                            <input id = {film._id} type = 'text' className = 'comment-input-field' onChange = {(e) => commentSetter(e)} placeholder = 'Enter a comment!' />
+                        <input type = 'button' value = 'post' className = 'comment-post-btn' onClick = {handlePost} />
+                        </div>
+
+                        <div className = 'comment-list-wrapper'>
+                            {
+                                commentList.map(comment => (
+                                    <div className = 'comment-wrap'>
+                                        <p className = 'comment-name'>{comment.user_name}</p>
+                                        <p className = 'comment-text'>{comment.comment_text}</p>
+                                    </div>
+                                ))
+                            }
+                        </div>
+
                     </div>
                     
                     <div className = 'detail-wrapper'>

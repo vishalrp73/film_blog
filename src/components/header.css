@@ -1,3 +1,17 @@
+@media screen and (max-width: 650px) {
+    #search__id {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #btn__id, #feeling-stupid {
+        height: 50px;
+        width: auto;
+        margin: 10px auto 20px auto;
+    }
+}
+
 .header-wrapper {
     width: 100%;
     background-color: #101010;

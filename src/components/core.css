@@ -1,3 +1,17 @@
+@media screen and (max-width: 650px) {
+    .display-results-wrapper {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #gen-list__id {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
 .core-wrapper {
     width: 100%;
     display: flex;

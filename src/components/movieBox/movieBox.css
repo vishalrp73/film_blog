@@ -50,13 +50,12 @@
     align-items: center;
     justify-content: center;
     border-radius: 50px;
-    margin: 0px 0px 30px auto;
 }
 
 
 .modal-wrapper {
     color: white;
-    width: 70%;
+    width: 90%;
     height: 85%;
     padding: 50px;
     background-color: rgba(0, 0, 0, 0.7);
@@ -80,6 +79,12 @@
     border-radius: 12px;
 }
 
+.top-wrap {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
 .iframe-container {
     position: relative;
     overflow: hidden;
@@ -96,6 +101,9 @@
 .title-text {
     font-size: 60px;
     color: rgb(255, 0, 162);
+    text-align: center;
+    width: 80%;
+    margin: auto;
 }
 
 .director-text {
@@ -179,6 +187,42 @@
     background: linear-gradient(rgb(255, 255, 255), rgb(255, 98, 0));
     background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+/* COMMENT FEATURE CSS */
+
+.comment-wrapper {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-input-wrap {
+    display: flex;
+    flex-direction: row;
+}
+
+.comment-input-field {
+    width: 80%;
+    height: 50px;
+}
+
+.comment-post-btn {
+    width: 20%;
+    height: 50px;
+}
+
+.comment-list-wrapper {
+    width: 100%;
+    margin: 20px auto;
+}
+
+.comment-wrap {
+    border: 1px solid green;
+    background-color: red;
+    margin: 10px auto 20px auto;
+
 }
 
 /* ::-webkit-scrollbar {
