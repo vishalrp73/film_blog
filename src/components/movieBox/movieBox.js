@@ -119,6 +119,8 @@ const MovieBox = (props) => {
                         <h1 className = 'title-text'>{film.title}</h1>
                         <h1 className = 'close-modal' onClick = {() => handleClose() }>X</h1>
                     </div>
+
+                    <h2>WARNING: MODAL REDESIGN IMMINENT, TEMPORARY TEXT FOR BRANCH PUSH</h2>
                     
                     <div className = 'iframe-container'>
                         <iframe src = {film.trailer + `?&amp;rel=0&amp;autoplay=1&amp;controls=1&amp;modestbranding=1&amp;iv_load_policy=3`}
