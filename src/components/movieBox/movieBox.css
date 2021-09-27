@@ -1,11 +1,68 @@
+@media screen and (max-width: 650px) {
+    #resp_box {
+        width: 150px;
+        height: 75px;
+    }
+
+    #resp_title {
+        font-size: 32px;
+    }
+
+    #resp_director, #resp_direct-by, #resp_year {
+        font-size: 14px;
+    }
+
+    #resp_runtime {
+        font-size: 8px;
+    }
+
+    #resp_runtime-value {
+        font-size: 14px;
+    }
+
+    #resp_details {
+        flex-direction: column;
+    }
+
+    #resp_detail-box {
+        width: 100%;
+    }
+
+    #resp_actor-score {
+        flex-direction: column;
+    }
+
+    #resp_actor-wrap {
+        width: 100%;
+    }
+
+    #resp_score-wrap {
+        margin: 20px;
+        width: 100%;
+    }
+
+    #resp_review-score {
+        font-size: 48px;
+    }
+
+    #resp_trivia {
+        width: 100%;
+    }
+
+    #resp_headline {
+        overflow-wrap: break-word;
+        font-size: 32px;
+    }
+}
+
+
 .entire-box-wrapper {
     display: flex;
     flex-direction: column;
 }
 
 .movie-box-wrapper {
-    min-width: 300px;
-    max-width: 300px;
+    width: 300px;
     height: 150px;
     border: 1px solid rgb(184, 86, 0);
     border-radius: 8px;
@@ -37,7 +94,7 @@
     height: 100%;
     display: flex;
     background-size: cover;
-    filter: brightness(1.5);
+    filter: brightness(1.25);
 }
 
 .close-modal {
@@ -45,7 +102,9 @@
     cursor: pointer;
     width: 50px;
     height: 50px;
-    background-color: rgb(255, 255, 255, 0.8);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -58,13 +117,18 @@
     width: 90%;
     height: 85%;
     padding: 50px;
-    background-color: rgba(0, 0, 0, 0.7);
-    border: 2px solid white;
-    margin: auto;
-    border-radius: 20px;
+    outline: none;
     text-align: center;
     overflow: scroll;
-    outline: none;
+    margin: auto;
+    
+    /* GLASSMORPHISM CSS */
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(0, 0, 0, 0.25);
+
+    border-radius: 20px;
+    border: 2px solid rgba(255,255,255, 0.5);
 }
 
 .trailer-wrapper {
@@ -83,6 +147,7 @@
     display: flex;
     width: 100%;
     align-items: center;
+
 }
 
 .iframe-container {
@@ -93,136 +158,177 @@
     border-radius: 12px;
 }
 
-.title-wrapper {
-    width: 80%;
-    margin: auto;
-}
+
 
 .title-text {
     font-size: 60px;
     color: rgb(255, 0, 162);
     text-align: center;
     width: 80%;
-    margin: auto;
+    margin: 20px auto;
 }
 
-.director-text {
-    font-size: 30px;
-}
-
-.year-text {
-    font-size: 30px;
-}
-
-.trivia-text {
-    font-size: 24px;
-    border: 4px double red;
-    padding: 20px;
-    border-radius: 12px;
-}
-
-.detail-wrapper {
-    width: 80%;
-    margin: auto;
-}
-
-#color-trivia {
-    color: rgb(216, 12, 12);
-    font-weight: 800;
-}
-
-.middle-bar-text {
-    color: yellow;
-    font-size: 20px;
-    border: 1px solid yellow;
-    width: 50%;
-    margin: auto;
-    padding: 10px;
-    border-radius: 12px;
-}
-
-.special_cat-text {
-    font-size: 28px;
-    color: yellow;
-}
-
-.crew-text {
-    font-size: 24px;
-    opacity: 0.5;
-}
-
-.blurb-text {
-    font-size: 24px;
-}
-
-.actor-wrapper {
-    border: 1px solid white;
-    padding: 10px;
-    width: 50%;
-    margin: 50px auto;
-    color: white;
-    border-radius: 12px;
-}
-
-.notable_act-text {
-    font-size: 18px;
-    font-weight: 800;
-    color: red;
-}
-
-.actor-text {
-    font-size: 24px;
-}
-
-.review-img-text {
-    font-size: 60px;
-    color:rgb(196, 20, 0);
-}
-
-.review-wrapper {
+.det-bar-wrapper {
     width: 75%;
-    margin: auto;
-    text-align: justify;
-    font-size: 20px;
-    background: linear-gradient(rgb(255, 255, 255), rgb(255, 98, 0));
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-/* COMMENT FEATURE CSS */
-
-.comment-wrapper {
-    width: 80%;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-}
-
-.comment-input-wrap {
+    height: 75px;
+    margin: 50px auto 25px auto;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.25);
     display: flex;
     flex-direction: row;
 }
 
-.comment-input-field {
-    width: 80%;
-    height: 50px;
-}
-
-.comment-post-btn {
+.year-wrap {
     width: 20%;
-    height: 50px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: rgba(255, 255, 255, 0.05);
+    border-top: none;
+    border-left: none;
+    border-bottom: none;
+    border-radius: 12px 0px 0px 12px;
 }
 
-.comment-list-wrapper {
-    width: 100%;
+.director-wrap {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.directed-by {
+    font-size: 20px;
+    margin-right: 10px;
+    color: rgba(125, 125, 125)
+}
+
+.runtime-wrap {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0px 12px 12px 0px;
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.runtime-text {
+    margin: 5px 0 0 0;
+}
+
+.details-wrapper {
+    width: 75%;
+    background-color: rgba(255, 255, 255, 0.05);
+    margin: 20px auto;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: row;
+}
+
+.detail-box {
+    width: 20%;
+    margin: 0;
+}
+
+.detail-title {
+    color: red;
+    font-weight: 700;
+}
+
+.actor_score-wrapper {
+    width: 75%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     margin: 20px auto;
 }
 
-.comment-wrap {
-    border: 1px solid green;
-    background-color: red;
-    margin: 10px auto 20px auto;
+.not_act-wrap {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.05);
+}
 
+.not_act-title {
+    color: red;
+    margin: 5px auto;
+    font-size: 14px;
+}
+
+.not_act-entries {
+    margin: 10px auto;
+    font-size: 18px;
+}
+
+.review_score-wrap {
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 2px solid white;
+    border-radius: 12px;
+    width: 25%;
+    margin-left: 20px;
+}
+
+.review_score-text {
+    font-size: 60px;
+}
+
+.blurb-wrapper {
+    width: 75%;
+    margin: auto;
+    border-radius: 12px;
+    padding: 10px 20px;
+}
+
+.blurb-title {
+    font-weight: 800;
+}
+
+.blurb-text {
+    font-size: 20px;
+}
+
+.trivia-wrapper {
+    width: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+.trivia-title {
+    color: red;
+}
+
+.review-wrapper {
+    width: 75%;
+    margin: 50px auto;
+    background-color: rgba(21,21,21,0.4);
+    padding: 10px 20px;
+    border: 1px ridge white;
+    border-radius: 12px;
+}
+
+.review-headline {
+    font-size: 48px;
+    text-align: center;
+}
+
+.review-text {
+    text-align: justify;
+}
+
+.review_score-text {
+    color: rgb(255, 0, 255);
 }
 
 /* ::-webkit-scrollbar {

@@ -2,13 +2,16 @@
     .display-results-wrapper {
         justify-content: center;
     }
-}
 
-@media screen and (max-width: 400px) {
     #gen-list__id {
-        flex-direction: column;
-        justify-content: center;
+        flex-wrap: wrap;
         align-items: center;
+        justify-content: center;
+    }
+
+    #gen_title {
+        font-size: 24px;
+        text-align: center;
     }
 }
 

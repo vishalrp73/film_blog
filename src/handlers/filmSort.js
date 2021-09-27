@@ -350,7 +350,7 @@ const FilmSort = () => {
             "TOP 5": top,
             "DE NIRO-SCORSESE CONNECTION": denSco,
             "Drama": drama,
-            "Foreign Language": forLang,
+            "Foreign Language (for me)": forLang,
             "Comedy": comedy,
             "Thriller": thriller,
             "Crime": crime,

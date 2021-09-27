@@ -51,7 +51,7 @@ const Core = (props) => {
 
                                             Object.entries(genList).map(genre => (
                                                 <div className = 'display-genre-wrapper'>
-                                                    <h1 className = 'genre-title'>{genre[0]}</h1>
+                                                    <h1 className = 'genre-title' id = 'gen_title'>{genre[0]}</h1>
                                                     <div className = 'genre-list-wrapper' id  = 'gen-list__id'>
                                                     {
                                                         genre[1].map(title => (<MovieBox movie = {title} films = {films} />))

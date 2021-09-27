@@ -5,11 +5,29 @@
         justify-content: center;
     }
 
-    #btn__id, #feeling-stupid {
+    #btn__id, #feeling-lazy {
         height: 50px;
         width: auto;
         margin: 10px auto 20px auto;
     }
+
+    #head_title {
+        font-size: 24px;
+    }
+
+    .title-wrap {
+        height: 425px;
+    }
+
+    .intro-text {
+        display: none;
+    }
+
+    #intro_resp {
+        display: block;
+    }
+
+
 }
 
 .header-wrapper {
@@ -43,6 +61,15 @@
     padding: 20px;
     background-color: rgb(0, 0, 0, 0.5);
     border-radius: 12px;
+}
+
+.intro-mob {
+    display: none;
+    width: 90%;
+    padding: 10px;
+    background-color: rgb(0, 0, 0, 0.5);
+    border-radius: 12px;
+    text-align: center;
 }
 
 .search-wrapper {
@@ -85,6 +112,10 @@
     color: rgb(222, 222, 222);
 }
 
-#feeling-stupid {
+.btn-wrap {
+    display: flex;
+}
+
+#feeling-lazy {
     width: 150px;
 }
