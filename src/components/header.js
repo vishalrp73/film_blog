@@ -83,7 +83,8 @@ const Header = (props) => {
                     Additionally, I manually screencapped and photoshopped each thumbnail image - so be impressed of my all-round front-end/UX expertise 😁
                 </p>
 
-                <p className = 'intro-mob' id = 'intro_resp'>Welcome to my film blog, tiny screen user - get a real display, loser!</p>
+                <p className = 'intro-mob' id = 'intro_resp'>Welcome, I don't quite appreciate you using a small screen because just like REAL CINEMA this blog
+                                                        deserves a FULL SCREEN THEATRICAL EXPERIENCE but whatever man, to each their own 🤷🏾‍♂️</p>
 
                 <div className = 'search-wrapper' id = 'search__id'>
 
@@ -93,7 +94,7 @@ const Header = (props) => {
                     <div className = 'btn-wrap'>
                         <input type = 'button' className = 'sort-btn' value = 'a-z' onClick  = {() => handleAlphaSort()} id = 'btn__id' />
                         <input type = 'button' className = 'sort-btn' value = 'year' onClick = {() => handleYearSort()} id = 'btn__id' />
-                        <input type = 'button' className = 'sort-btn' id = 'feeling-lazy' value = "I'M FEELING LAZY AF" onClick = {() => handleRandom()} />
+                        <input type = 'button' className = 'sort-btn' id = 'feeling-lazy' value = "I'M FEELING LAZY" onClick = {() => handleRandom()} />
                     </div>
                     
                 </div>

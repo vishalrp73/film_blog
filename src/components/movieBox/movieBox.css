@@ -349,3 +349,58 @@
 ::-webkit-scrollbar-corner {
     display: none;
 } */
+
+/* COMMENT FEATURE CSS */
+
+.comment-wrapper {
+    width: 75%;
+    border-radius: 12px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-heading {
+    font-size: 16px;
+    margin: auto;
+}
+
+.comment_input-wrap {
+    display: flex;
+    width: 100%;
+    margin: 25px auto;
+}
+
+.right-bar {
+    display: flex;
+    flex-direction: column;
+}
+
+.comment_text-input {
+    width: 80%;
+    border: 1px solid black;
+    border-top: none;
+    border-left: none;
+    border-bottom: none;
+    border-radius: 2px 0px 0px 2px;
+    height: fit-content;
+    min-height: 50px;
+}
+
+.comment_text-input:focus {
+    margin: 0;
+}
+
+.comment_name-input {
+    width: 100%;
+    border-radius: 0px 2px 2px 0px;
+    border: 1px none white;
+    height: 25px;
+}
+
+.comment_post-btn {
+    width: 100%;
+    border: none;
+    background-color: orange;
+    height: 25px;
+}

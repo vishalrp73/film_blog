@@ -19,10 +19,14 @@ const MovieBox = (props) => {
     const [cinemat, setCinemat] = useState([]);
     const [soundt, setSoundt] = useState([]);
     const [specCat, setSpecCat] = useState([]);
+    const [filmId, setFilmId] = useState();
+
 
     const [comment, setComment] = useState('');
-    const [commentId, setCommentId] = useState();
+    const [comFilmId, setComFilmId] = useState();
     const [commentName, setCommentName] = useState('');
+    const [commentUp, setCommentUp] = useState(0);
+    const [commentDown, setCommentDown] = useState(0);
 
     const [commentList, setCommentList] = useState([]);
 
@@ -46,6 +50,12 @@ const MovieBox = (props) => {
             let num = Math.floor(Math.random() * film.img_bank.length - 0)
             let trivNum = Math.floor(Math.random() * film.trivia.length - 0)
 
+            try {
+                setFilmId(film.film_id)
+            } catch (error) {
+                console.log(error)
+            }
+
             setRand(film.img_bank[num])
             setTrivia(film.trivia[trivNum])
             setParagraph(film.review_text.split('\n'))
@@ -55,12 +65,12 @@ const MovieBox = (props) => {
             setCinemat(film.cinematography)
             setSoundt(film.soundtrack)
             setSpecCat(film.special_category)
+            
 
         } catch (error) {
             console.log(error)
         }
-        console.log(film.review_text)
-        console.log(paragraph)
+        console.log(filmId)
        
     }
 
@@ -68,9 +78,11 @@ const MovieBox = (props) => {
         setOpen(false);
     }
 
+    /* COMMENT FUNCTIONALITY */
+
     const commentSetter = (event) => {
         setComment(event.target.value)
-        setCommentId(event.target.id)
+        setComFilmId(event.target.id)
     }
 
     const commentNameSetter = (event) => {
@@ -78,25 +90,24 @@ const MovieBox = (props) => {
     }
 
     const handlePost = () => {
-        axios.post ('http://localhost:4000/postComment', {
-            addComment: comment,
-            id: commentId,
-            name: commentName
+        axios.post ('http://localhost:4000/commentPost', {
+            id: comFilmId,
+            name: commentName,
+            addComment: comment
         })
         .then (response => {
             if (response.status === 200) {
-                console.log('Posted comment')
+                console.log(response)
             }
         })
         .catch (() => console.log('Unsuccessful comment post'))
 
     }
 
-    
-
-
+    /* END OF COMMENT FUNCTIONALITY */
 
     return (
+
         <div className = 'entire-box-wrapper'>
             
             <div className = 'movie-box-wrapper' id = 'resp_box' onClick = {() => handleOpen(film) }
@@ -114,6 +125,8 @@ const MovieBox = (props) => {
 
         
             <Modal className = 'mui-modal' open = {open} onClose = {() => handleClose()} style = {{backgroundImage: `url(${rand})`}} >
+
+
                 <div className = 'modal-wrapper'>
 
                     <div className = 'top-wrap'>
@@ -206,6 +219,22 @@ const MovieBox = (props) => {
                                 paragraph.map(item => (<p>{item}<br/></p>))
                             }
                         </p>
+                    </div>
+
+                    <div className = 'comment-wrapper'>
+                        <h4 className = 'comment-heading'>What are your thoughts on this movie?</h4>
+
+                        <div className = 'comment_input-wrap'>
+
+                            <input type = 'text' id = {filmId} className = 'comment_text-input' placeholder = 'Comment' onChange = {(e) => commentSetter(e) }/>
+
+                            <div className = 'right-bar'>
+                                <input type = 'text' className = 'comment_name-input' placeholder = 'Name' onChange = {(e) => commentNameSetter(e) }/>                                
+                                <input type = 'button' className = 'comment_post-btn' value = 'POST' onClick = {handlePost}/>
+                            </div>
+
+                        </div>
+
                     </div>
 
                     

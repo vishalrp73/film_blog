@@ -58,3 +58,16 @@
     border-right-style: none;
     padding: 50px 0px;
 }
+
+.random_film-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.random-film-text {
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+}

@@ -28,7 +28,6 @@ const Core = (props) => {
 
     useEffect(() => {
         let randomNum = Math.floor(Math.random() * films.length - 0)
-        let temp = '';
         try {
             let temp  = films[randomNum].title
             setRandFilm(temp)
@@ -84,7 +83,11 @@ const Core = (props) => {
                                                             </div>
                                                         ))
                                                         
-                                                        : (sort == 3) ? <><MovieBox movie = {randFilm} films = {films} /></> : console.log('ERROR: Films not found')
+                                                        : (sort == 3) ? <div className = 'random_film-wrap'>
+                                                                            <h2 className = 'random-film-text'>Here's a random film !</h2>
+                                                                            <MovieBox movie = {randFilm} films = {films} />
+                                                                        </div> 
+                                                                        : console.log('ERROR: Films not found')
 
                 :
                 <div className = 'display-results-wrapper'>

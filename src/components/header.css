@@ -16,7 +16,7 @@
     }
 
     .title-wrap {
-        height: 425px;
+        height: 500px;
     }
 
     .intro-text {
@@ -25,6 +25,10 @@
 
     #intro_resp {
         display: block;
+    }
+
+    #clear_box {
+        font-size: 14px;
     }
 
 
@@ -41,7 +45,9 @@
     font-size: 72px;
     text-align: center;
     padding: 20px;
-    background-color: rgb(0,0,0, 0.5);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(0, 0, 0, 0.4);
     border-radius: 12px;
 }
 
@@ -59,7 +65,9 @@
     width: 50%;
     text-align: center;
     padding: 20px;
-    background-color: rgb(0, 0, 0, 0.5);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(0, 0, 0, 0.4);
     border-radius: 12px;
 }
 
@@ -67,9 +75,13 @@
     display: none;
     width: 90%;
     padding: 10px;
-    background-color: rgb(0, 0, 0, 0.5);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(0, 0, 0, 0.4);
     border-radius: 12px;
     text-align: center;
+    margin: 0;
+    font-size: 12px;
 }
 
 .search-wrapper {
