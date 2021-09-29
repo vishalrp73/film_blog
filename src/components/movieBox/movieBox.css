@@ -55,6 +55,27 @@
     }
 }
 
+@media screen and (max-width: 900px) {
+    #resp_detail-title {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    #resp_detail-title {
+        font-size: 8px;
+    }
+    #resp_review-wrap {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    #resp_detail-title {
+        font-size: 14px;
+    }
+}
+
 
 .entire-box-wrapper {
     display: flex;
@@ -244,6 +265,7 @@
 .detail-title {
     color: red;
     font-weight: 700;
+    font-size: 12px;
 }
 
 .actor_score-wrapper {

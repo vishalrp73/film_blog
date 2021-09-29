@@ -166,27 +166,27 @@ const MovieBox = (props) => {
                     <div className = 'details-wrapper' id = 'resp_details'>
 
                         <div className = 'detail-box' id = 'resp_detail-box'>
-                            <h3 className = 'detail-title'>GENRES</h3>
+                            <h3 className = 'detail-title' id = 'resp_detail-title'>GENRES</h3>
                             <p className = 'detail-entries'>{ genres.map(genre => (<>{genre}<br/></>)) }</p>
                         </div>
 
                         <div className = 'detail-box' id = 'resp_detail-box'>
-                            <h3 className = 'detail-title'>WRITER(S)</h3>
+                            <h3 className = 'detail-title' id = 'resp_detail-title'>WRITER(S)</h3>
                             <p className = 'detail-entries'>{ writers.map(writer => (<>{writer}<br/></>)) }</p>
                         </div>
 
                         <div className = 'detail-box' id = 'resp_detail-box'>
-                            <h3 className = 'detail-title'>CINEMATOGRAPHY</h3>
+                            <h3 className = 'detail-title' id = 'resp_detail-title'>CINEMATOGRAPHY</h3>
                             <p className = 'detail-entries'>{ cinemat.map(artist => (<>{artist}<br/></>)) }</p>
                         </div>
 
                         <div className = 'detail-box' id = 'resp_detail-box'>
-                            <h3 className = 'detail-title'>SOUNDTRACK</h3>
+                            <h3 className = 'detail-title' id = 'resp_detail-title'>SOUNDTRACK</h3>
                             <p className = 'detail-entries'>{ soundt.map(artist => (<>{artist}<br/></>))}</p>
                         </div>
 
                         <div className = 'detail-box' id = 'resp_detail-box'>
-                            <h3 className = 'detail-title'>CATEGORIES</h3>
+                            <h3 className = 'detail-title' id = 'resp_detail-title'>CATEGORIES</h3>
                             <p className = 'detail-entries'>{ specCat.map(category => (<>{ category }<br/></>)) }</p>
                         </div>
 
@@ -212,7 +212,7 @@ const MovieBox = (props) => {
                         <p className = 'trivia-text'>{ trivia }</p>
                     </div>
 
-                    <div className = 'review-wrapper'>
+                    <div className = 'review-wrapper' id = 'resp_review-wrap'>
                         <h2 className = 'review-headline' id = 'resp_headline'>{ film.headline }</h2>
                         <p className = 'review-text'>
                             {
