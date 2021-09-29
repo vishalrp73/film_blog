@@ -66,8 +66,13 @@
     justify-content: center;
 }
 
+.rand_movie-box {
+    margin: 25px auto 50px auto;
+}
+
 .random-film-text {
     font-size: 40px;
     font-weight: 600;
     text-align: center;
+    margin: 20px auto 0px auto;
 }

@@ -85,7 +85,9 @@ const Core = (props) => {
                                                         
                                                         : (sort == 3) ? <div className = 'random_film-wrap'>
                                                                             <h2 className = 'random-film-text'>Here's a random film !</h2>
-                                                                            <MovieBox movie = {randFilm} films = {films} />
+                                                                            <div className = 'rand_movie-box' >
+                                                                                <MovieBox movie = {randFilm} films = {films} />
+                                                                            </div>
                                                                         </div> 
                                                                         : console.log('ERROR: Films not found')
 

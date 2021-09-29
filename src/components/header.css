@@ -102,6 +102,8 @@
     font-size: 24px;
     color: rgb(255, 0, 162);
     text-align: center;
+    font-family: 'Red Hat Display', sans-serif;
+    font-weight: 600;
 }
 
 .search-box:focus {
@@ -116,6 +118,11 @@
     border-radius: 8px;
     margin: 0px 5px;
     background-color: rgb(40, 40, 40);
+    font-family: 'Fira Code', sans-serif;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .sort-btn:hover {

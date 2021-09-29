@@ -83,13 +83,14 @@ const Header = (props) => {
                     Additionally, I manually screencapped and photoshopped each thumbnail image - so be impressed of my all-round front-end/UX expertise 😁
                 </p>
 
-                <p className = 'intro-mob' id = 'intro_resp'>Welcome, I don't quite appreciate you using a small screen because just like REAL CINEMA this blog
-                                                        deserves a FULL SCREEN THEATRICAL EXPERIENCE but whatever man, to each their own 🤷🏾‍♂️</p>
+                <p className = 'intro-mob' id = 'intro_resp'>Welcome, tiny screen user. Are you an infant? Do you think it's funny to use
+                                                        small devices to access vital information? Because just like REAL CINEMA, this blog
+                                                        deserves a FULL SCREEN THEATRICAL EXPERIENCE - but whatever man, to each their own 🤷🏾‍♂️</p>
 
                 <div className = 'search-wrapper' id = 'search__id'>
 
                     <input type = 'button' className = 'sort-btn' value = 'reset' onClick = {() => handleReset()} id = 'btn__id' />
-                    <input type = 'text' id = 'clear_box' className = 'search-box' onChange = {(e) => setSearchTerm(e.target.value)} placeholder = {placeFilm ? `Search for a title e.g... "${placeFilm.title}"` : `search for a title!`} />
+                    <input type = 'text' id = 'clear_box' className = 'search-box' onChange = {(e) => setSearchTerm(e.target.value)} placeholder = {placeFilm ? `Search for a title! e.g ... "${placeFilm.title}"` : `Search for a title!`} />
                     
                     <div className = 'btn-wrap'>
                         <input type = 'button' className = 'sort-btn' value = 'a-z' onClick  = {() => handleAlphaSort()} id = 'btn__id' />

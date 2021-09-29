@@ -151,7 +151,7 @@ const MovieBox = (props) => {
 
                         <div className = 'runtime-wrap'>
                             <h4 className = 'runtime-text' id = 'resp_runtime'>RUNTIME</h4>
-                            <h2 id = 'resp_runtime-value'>{film.runtime}</h2>
+                            <h2 id = 'resp_runtime-value' className = 'runtime-value'>{film.runtime}</h2>
                         </div>
 
                     </div>
@@ -221,21 +221,26 @@ const MovieBox = (props) => {
                         </p>
                     </div>
 
-                    <div className = 'comment-wrapper'>
+                    {/* COMMENT FEATURE CODE (TEMPORARILY REMOVED FOR MERGE) */}
+
+                    {/* <div className = 'comment-wrapper'>
                         <h4 className = 'comment-heading'>What are your thoughts on this movie?</h4>
 
-                        <div className = 'comment_input-wrap'>
 
-                            <input type = 'text' id = {filmId} className = 'comment_text-input' placeholder = 'Comment' onChange = {(e) => commentSetter(e) }/>
+                        <form method = 'post' action = '/commentPost' encType = 'multipart/form-data'>
+                            <div className = 'comment_input-wrap'>
 
-                            <div className = 'right-bar'>
-                                <input type = 'text' className = 'comment_name-input' placeholder = 'Name' onChange = {(e) => commentNameSetter(e) }/>                                
-                                <input type = 'button' className = 'comment_post-btn' value = 'POST' onClick = {handlePost}/>
+                                <input name = 'name' type = 'text' id = {filmId} className = 'comment_text-input' placeholder = 'Comment' onChange = {(e) => commentSetter(e) }/>
+
+                                <div className = 'right-bar'>
+                                    <input name = 'comText' type = 'text' className = 'comment_name-input' placeholder = 'Name' onChange = {(e) => commentNameSetter(e) }/>                                
+                                    <input type = 'button' className = 'comment_post-btn' value = 'POST' onClick = {handlePost}/>
+                                </div>
+
                             </div>
+                        </form>
 
-                        </div>
-
-                    </div>
+                    </div> */}
 
                     
                 </div>

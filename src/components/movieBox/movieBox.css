@@ -223,6 +223,10 @@
     margin: 5px 0 0 0;
 }
 
+.runtime-value {
+    margin-top: 10px;
+}
+
 .details-wrapper {
     width: 75%;
     background-color: rgba(255, 255, 255, 0.05);
@@ -312,9 +316,10 @@
 .review-wrapper {
     width: 75%;
     margin: 50px auto;
-    background-color: rgba(21,21,21,0.4);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.05);
     padding: 10px 20px;
-    border: 1px ridge white;
     border-radius: 12px;
 }
 
@@ -331,7 +336,7 @@
     color: rgb(255, 0, 255);
 }
 
-/* ::-webkit-scrollbar {
+::-webkit-scrollbar {
     width: 10px;
     background: rgb(255, 255, 255, 0);
     border-radius: 30px;
@@ -348,11 +353,11 @@
 
 ::-webkit-scrollbar-corner {
     display: none;
-} */
+}
 
-/* COMMENT FEATURE CSS */
+/* COMMENT FEATURE CSS (TEMPORARILY REMOVED FOR MERGE) */
 
-.comment-wrapper {
+/* .comment-wrapper {
     width: 75%;
     border-radius: 12px;
     margin: auto;
@@ -403,4 +408,4 @@
     border: none;
     background-color: orange;
     height: 25px;
-}
+} */
