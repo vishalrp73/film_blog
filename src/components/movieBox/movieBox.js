@@ -23,10 +23,8 @@ const MovieBox = (props) => {
 
 
     const [comment, setComment] = useState('');
-    const [comFilmId, setComFilmId] = useState();
     const [commentName, setCommentName] = useState('');
-    const [commentUp, setCommentUp] = useState(0);
-    const [commentDown, setCommentDown] = useState(0);
+    const [comFilmId, setComFilmId] = useState();
 
     const [commentList, setCommentList] = useState([]);
 
@@ -65,6 +63,7 @@ const MovieBox = (props) => {
             setCinemat(film.cinematography)
             setSoundt(film.soundtrack)
             setSpecCat(film.special_category)
+            setCommentList((film.comments).reverse())
             
 
         } catch (error) {
@@ -80,27 +79,34 @@ const MovieBox = (props) => {
 
     /* COMMENT FUNCTIONALITY */
 
-    const commentSetter = (event) => {
+    const handleName = (event) => {
+        setCommentName(event.target.value)
+    }
+
+    const handleComment = (event) => {
         setComment(event.target.value)
         setComFilmId(event.target.id)
     }
 
-    const commentNameSetter = (event) => {
-        setCommentName(event.target.value)
-    }
+    const handlePost = (event) => {
+        
+        console.log(comFilmId)
+        console.log(commentName)
+        console.log(comment)
 
-    const handlePost = () => {
-        axios.post ('http://localhost:4000/commentPost', {
+        event.preventDefault();
+
+        const newComment = {
             id: comFilmId,
             name: commentName,
-            addComment: comment
-        })
-        .then (response => {
-            if (response.status === 200) {
-                console.log(response)
-            }
-        })
-        .catch (() => console.log('Unsuccessful comment post'))
+            comText: comment
+        }
+
+        axios.post('http://localhost:4000/addComment', newComment)
+        alert('Comment added');
+        setComFilmId();
+        setCommentName('');
+        setComment('');
 
     }
 
@@ -223,24 +229,64 @@ const MovieBox = (props) => {
 
                     {/* COMMENT FEATURE CODE (TEMPORARILY REMOVED FOR MERGE) */}
 
-                    {/* <div className = 'comment-wrapper'>
+                    <div className = 'comment-wrapper'>
                         <h4 className = 'comment-heading'>What are your thoughts on this movie?</h4>
 
+                        <div className = 'comment-input-wrap'>
 
-                        <form method = 'post' action = '/commentPost' encType = 'multipart/form-data'>
-                            <div className = 'comment_input-wrap'>
+                            <textarea id = {film._id}
+                                        className = 'comment-text-input'
+                                        placeholder = 'Enter a comment !'
+                                        onChange = { handleComment } />
 
-                                <input name = 'name' type = 'text' id = {filmId} className = 'comment_text-input' placeholder = 'Comment' onChange = {(e) => commentSetter(e) }/>
 
-                                <div className = 'right-bar'>
-                                    <input name = 'comText' type = 'text' className = 'comment_name-input' placeholder = 'Name' onChange = {(e) => commentNameSetter(e) }/>                                
-                                    <input type = 'button' className = 'comment_post-btn' value = 'POST' onClick = {handlePost}/>
-                                </div>
-
+                            <div className = 'right-bar'>
+                                <input
+                                    className = 'comment-name-input'
+                                    type = 'text'
+                                    placeholder = 'name'
+                                    onChange = { handleName } />                                
+                                
+                                <input
+                                    className = 'comment-post-btn'
+                                    type = 'button'
+                                    value = 'POST'
+                                    onClick = { handlePost } />
+                                
                             </div>
-                        </form>
 
-                    </div> */}
+                        </div>
+
+                        <div className = 'comment-list-wrapper'>
+
+                        {
+                            commentList.map(comment => (
+                                <div className = 'individual-comment-wrap'>
+
+                                    <div className = 'left-portion'>
+                                        <p className = 'com-text'>{comment.comment_text}</p>
+                                        <div className = 'vote-bar'>
+                                            <p className = 'upvote-tally'>UP: {comment.upvotes} | </p>
+                                            <p className = 'downvote-tally'>| DOWN: {comment.downvotes}</p>
+                                        </div>
+                                    </div>
+
+                                    <div className = 'right-portion'>
+                                        <h4 className = 'com-name'>{comment.name}</h4>
+                                        <h5 className = 'com-timestamp'>{new Date(comment.timestamp).toLocaleString()}</h5>
+                                    </div>
+
+
+
+                                </div>
+                            ))
+                        }
+
+
+
+                    </div>
+
+                    </div>
 
                     
                 </div>
