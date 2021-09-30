@@ -74,7 +74,7 @@ const Header = (props) => {
     return (
         <div className = 'header-wrapper'  >
 
-            <div className = 'seal-wrapper' id = 'resp_seal-wrap' />
+            {/* <div className = 'seal-wrapper' id = 'resp_seal-wrap' /> */}
             
             <div className = 'title-wrap' style={{backgroundImage: `url(${backImgList[num]})` }} >    
 
@@ -94,7 +94,7 @@ const Header = (props) => {
                 <div className = 'search-wrapper' id = 'search__id'>
 
                     <input type = 'button' className = 'sort-btn' value = 'reset' onClick = {() => handleReset()} id = 'btn__id' />
-                    <input type = 'text' id = 'clear_box' className = 'search-box' onChange = {(e) => setSearchTerm(e.target.value)} placeholder = {placeFilm ? `Search for a title! e.g ... "${placeFilm.title}"` : `Search for a title!`} />
+                    <input type = 'text' id = 'clear_box' className = 'search-box' onChange = {(e) => setSearchTerm(e.target.value)} placeholder = {placeFilm ? `Search for a title! e.g ... "${placeFilm.title}"` : `Search for a title!`} autoComplete = 'off' />
                     
                     <div className = 'btn-wrap'>
                         <input type = 'button' className = 'sort-btn' value = 'a-z' onClick  = {() => handleAlphaSort()} id = 'btn__id' />

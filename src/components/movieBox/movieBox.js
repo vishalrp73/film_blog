@@ -21,11 +21,9 @@ const MovieBox = (props) => {
     const [specCat, setSpecCat] = useState([]);
     const [filmId, setFilmId] = useState();
 
-
     const [comment, setComment] = useState('');
     const [commentName, setCommentName] = useState('');
     const [comFilmId, setComFilmId] = useState();
-
     const [commentList, setCommentList] = useState([]);
 
 
@@ -103,10 +101,34 @@ const MovieBox = (props) => {
         }
 
         axios.post('http://localhost:4000/addComment', newComment)
-        alert('Comment added');
+        document.getElementById('comment-heading-bar').innerHTML = 'COMMENT POSTED! REFRESH TO VIEW'
         setComFilmId();
         setCommentName('');
         setComment('');
+
+    }
+
+    const handleUp = (id, commentId) => {
+        console.log('upvote triggered');
+
+        const upvoteObj = {
+            film_id: id,
+            comment_id: commentId
+        }
+
+        axios.put('http://localhost:4000/upvote/' + id, upvoteObj);
+        console.log('Upvote sent');
+    }
+
+    const handleDown = (id, commentId) => {
+
+        const downvoteObj = {
+            film_id: id,
+            comment_id: commentId
+        }
+
+        axios.put('http://localhost:4000/downvote/' + id, downvoteObj);
+        console.log('Downvote sent')
 
     }
 
@@ -230,7 +252,9 @@ const MovieBox = (props) => {
                     {/* COMMENT FEATURE CODE (TEMPORARILY REMOVED FOR MERGE) */}
 
                     <div className = 'comment-wrapper'>
-                        <h4 className = 'comment-heading'>What are your thoughts on this movie?</h4>
+                        <h4 className = 'comment-heading' id = 'comment-heading-bar'>What are your thoughts on this movie?</h4>
+                        <p className = 'comment-helper-text'>Please don't abuse the comment section, I don't want to have to come down there
+                                                        and crack some heads open.</p>
 
                         <div className = 'comment-input-wrap'>
 
@@ -264,11 +288,16 @@ const MovieBox = (props) => {
                                 <div className = 'individual-comment-wrap'>
 
                                     <div className = 'left-portion'>
+                                        
                                         <p className = 'com-text'>{comment.comment_text}</p>
+
+                                        { /* UPVOTE + DOWNVOTE FUNCTIONALITY */ }
+                                        
                                         <div className = 'vote-bar'>
-                                            <p className = 'upvote-tally'>UP: {comment.upvotes} | </p>
-                                            <p className = 'downvote-tally'>| DOWN: {comment.downvotes}</p>
+                                            <p id = 'up-count' className = 'upvote-tally' onClick = { () => handleUp(film._id, comment._id) }>UP: {comment.upvotes} | </p>
+                                            <p id = 'down-count' className = 'downvote-tally' onClick = { () => handleDown(film._id, comment._id) }>| DOWN: {comment.downvotes}</p>
                                         </div>
+
                                     </div>
 
                                     <div className = 'right-portion'>

@@ -341,7 +341,7 @@
 
 .review-wrapper {
     width: 75%;
-    margin: 50px auto;
+    margin: 50px auto 25px auto;
     backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
     background-color: rgba(255, 255, 255, 0.05);
@@ -356,7 +356,7 @@
 
 .review-text {
     text-align: justify;
-    font-size: 24px;
+    font-size: 20px;
 }
 
 .review_score-text {
@@ -392,7 +392,13 @@
 }
 
 .comment-heading {
-    font-size: 24px;
+    font-size: 32px;
+    margin: 20px auto;
+}
+
+.comment-helper-text {
+    font-size: 16px;
+    margin: 0px auto 50px auto;
 }
 
 .comment-input-wrap {
@@ -400,6 +406,9 @@
     flex-direction: row;
     width: 100%;
     height: 75px;
+    margin: 0px auto 20px auto;
+    border-radius: 14px;
+    border: 5px double white;
 }
 
 .comment-text-input {
@@ -462,6 +471,10 @@
 .com-text {
     width: 100%;
     height: fit-content;
+}
+
+.upvote-tally, .downvote-tally {
+    cursor: pointer;
 }
 
 .vote-bar {
