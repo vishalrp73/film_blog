@@ -47,7 +47,7 @@ const CommentModule = (props) => {
     
             axios.post('http://localhost:4000/addComment', newComment)
             setDisplayError(false);
-            document.getElementById('display-text-content').innerHTML = 'COMMENT POSTED! REFRESH TO VIEW'
+            document.getElementById('display-text-content').innerHTML = 'COMMENT POSTED! REFRESH MODAL TO VIEW'
             setComFilmId();
             setCommentName();
             setComment();
