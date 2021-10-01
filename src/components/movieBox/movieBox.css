@@ -53,20 +53,20 @@
         overflow-wrap: break-word;
         font-size: 32px;
     }
-
-    #upvote-img, #downvote-img {
-        height: 10px;
-    }
-
-    #resp_com-text {
+    #resp_detail-title {
         font-size: 14px;
     }
-
-    #resp_vote-bar {
-        flex-direction: column;
-        height: fit-content;
-        padding: 5px;
+    #resp_blurb-text {
+        font-size: 16px;
     }
+    #resp_trivia-text {
+        font-size: 16px;
+    }
+    #resp_review-text {
+        font-size: 16px;
+    }
+
+    
 }
 
 @media screen and (max-width: 900px) {
@@ -83,22 +83,8 @@
         width: 100%;
     }
 
-    #resp_com-name {
-        font-size: 12px;
-    }
-    #resp_com-time {
-        font-size: 10px;
-    }
 }
 
-@media screen and (max-width: 650px) {
-    #resp_detail-title {
-        font-size: 14px;
-    }
-    #upvote-tally, #downvote-tally {
-        font-size: 14px;
-    }
-}
 
 
 .entire-box-wrapper {

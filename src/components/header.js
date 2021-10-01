@@ -74,12 +74,12 @@ const Header = (props) => {
     return (
         <div className = 'header-wrapper'  >
 
-            {/* <div className = 'seal-wrapper' id = 'resp_seal-wrap' /> */}
+            <div className = 'seal-wrapper' id = 'resp_seal-wrap' />
             
             <div className = 'title-wrap' style={{backgroundImage: `url(${backImgList[num]})` }} >    
 
 
-                <h1 className = 'header-title' id = 'head_title'>VISHAL'S PRETENTIOUS FILM BLOG</h1>
+                <h1 className = 'header-title' id = 'head_title' onClick = {() => handleReset()}>VISHAL'S PRETENTIOUS FILM BLOG</h1>
 
                 <p className = 'intro-text'>Howdy friends !<br />
                     I welcome you to my personal film blog - created entirely from scratch using MongoDB for the database, NODE.JS for the (local) server,

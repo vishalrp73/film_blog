@@ -128,7 +128,7 @@ const MovieBox = (props) => {
 
                     <div className = 'blurb-wrapper'>
                         <h3 className = 'blurb-title'>BLURB</h3>
-                        <p className = 'blurb-text'>{ film.blurb }</p>
+                        <p className = 'blurb-text' id = 'resp_blurb-text'>{ film.blurb }</p>
                     </div>
 
                     { /* CREW AND BASIC DETAILS WRAPPER */}
@@ -179,12 +179,12 @@ const MovieBox = (props) => {
 
                     <div className = 'trivia-wrapper' id = 'resp_trivia'>
                         <h3 className = 'trivia-title'>RANDOM TRIVIA !</h3>
-                        <p className = 'trivia-text'>{ trivia }</p>
+                        <p className = 'trivia-text' id = 'resp_trivia-text'>{ trivia }</p>
                     </div>
 
                     <div className = 'review-wrapper' id = 'resp_review-wrap'>
                         <h2 className = 'review-headline' id = 'resp_headline'>{ film.headline }</h2>
-                        <p className = 'review-text'>
+                        <p className = 'review-text' id = 'resp_review-text'>
                             {
                                 paragraph.map(item => (<p>{item}<br/></p>))
                             }

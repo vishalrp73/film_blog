@@ -33,11 +33,6 @@ const CommentModule = (props) => {
     const handlePost = (event) => {
 
         if (commentName != '' && comment != '') {
-            
-            console.log('both checks passed')
-
-            console.log('Comment Name: ' + commentName)
-            console.log('Comment Text:' + comment)
 
             const newComment = {
                 id: comFilmId,
@@ -88,7 +83,7 @@ const CommentModule = (props) => {
     return (
         <>
 
-                <div className = 'comment-wrapper'>
+                <div className = 'comment-wrapper' id = 'resp_comment-wrapper'>
                         <h4 className = 'comment-heading' id = 'comment-heading-bar'>What are your thoughts on this movie?</h4>
 
                         <div className = 'comment-input-wrap'>

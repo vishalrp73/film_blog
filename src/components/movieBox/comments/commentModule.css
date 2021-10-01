@@ -1,3 +1,45 @@
+@media screen and (max-width: 650px) {
+    #resp_comment-wrapper {
+        width: 100%;
+    }
+
+    #upvote-img, #downvote-img {
+        height: 10px;
+    }
+
+    #resp_com-text {
+        font-size: 14px;
+    }
+
+    #resp_vote-bar {
+        flex-direction: column;
+        height: fit-content;
+        padding: 5px;
+    }
+    #upvote-tally, #downvote-tally {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    #resp_com-name {
+        font-size: 12px;
+    }
+    #resp_com-time {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #resp_com-name {
+        font-size: 10px;
+    }
+    #resp_com-time {
+        font-size: 8px;
+    }
+}
+
+
 .comment-wrapper {
     display: flex;
     flex-direction: column;
@@ -80,13 +122,13 @@
     width: 100%;
     height: fit-content;
     background-color: black;
-    border-radius: 4px;
+    border-radius: 8px;
     border: none;
     color: lightgreen;
 }
 
 .display-text {
-    padding: 10px;
+    padding: 10px 30px;
 }
 
 .comment-list-wrapper {

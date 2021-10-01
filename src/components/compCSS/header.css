@@ -62,7 +62,7 @@
     bottom: auto;
     width: 200px;
     height: 200px;
-    background-image: url('../../img/Golden_Seal.png');
+    background-image: url('../../img/golden-seal.png');
     background-size: contain;
     z-index: 1;
 }
@@ -75,6 +75,7 @@
     -webkit-backdrop-filter: blur(16px) saturate(180%);
     background-color: rgba(0, 0, 0, 0.4);
     border-radius: 12px;
+    cursor: pointer;
 }
 
 .title-wrap {
