@@ -1,4 +1,4 @@
-import './core.css';
+import './compCSS/core.css';
 import { useState, useEffect } from 'react';
 import MovieBox from './movieBox/movieBox';
 

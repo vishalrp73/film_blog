@@ -1,4 +1,4 @@
-import './header.css';
+import './compCSS/header.css';
 import Fuse from 'fuse.js';
 import Core from '../components/core';
 

@@ -62,7 +62,7 @@
     bottom: auto;
     width: 200px;
     height: 200px;
-    background-image: url('../img/Golden_Seal.png');
+    background-image: url('../../img/Golden_Seal.png');
     background-size: contain;
     z-index: 1;
 }
