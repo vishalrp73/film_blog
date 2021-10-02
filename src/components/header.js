@@ -17,6 +17,7 @@ const Header = (props) => {
     const [sort, setSort] = useState(false)
     const [randNum, setRandNum] = useState(0);
     const [placeFilm, setPlaceFilm] = useState('');
+    const portfolioURL = 'www.fuckyou.com';
 
     const backImgList = [
         "https://film-img.s3.ap-southeast-2.amazonaws.com/slides/apoc-8.png", "https://film-img.s3.ap-southeast-2.amazonaws.com/slides/julia-fox.jpg"
@@ -81,10 +82,12 @@ const Header = (props) => {
 
                 <h1 className = 'header-title' id = 'head_title' onClick = {() => handleReset()}>VISHAL'S PRETENTIOUS FILM BLOG</h1>
 
-                <p className = 'intro-text'>Howdy friends !<br />
-                    I welcome you to my personal film blog - created entirely from scratch using MongoDB for the database, NODE.JS for the (local) server,
-                    Express.js for back-end middleware, and React for the front end / UI<br/><br />
-                    Additionally, I manually screencapped and photoshopped each thumbnail image - so be impressed of my all-round front-end/UX expertise 😁
+                <p className = 'intro-text'>Howdy friends !<br /><br />
+                                            Welcome to my film blog - created from scratch using React, Express.js and MongoDB !<br />
+                                            Further documentation relating to the production process can be found on my personal website at:<br />
+                                            <a href = '#' className = 'folio-url'>{portfolioURL}</a><br/>
+                                            ALL graphics were lovingly hand-made (unlike the CGI graphics those damn Hollywood studios spew out!) so don't sue me bruh 😁<br />
+                                            Also all these reviews were OFF THE CUFF so expect plenty of grammatical errors because who needs proof-reading?
                 </p>
 
                 <p className = 'intro-mob' id = 'intro_resp'>Welcome, tiny screen user. Are you an infant? Do you think it's funny to use

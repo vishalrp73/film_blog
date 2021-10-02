@@ -86,11 +86,12 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    text-align: justify;
 }
 
 .intro-text {
     width: 50%;
-    text-align: center;
+    text-align-last: center;
     padding: 20px;
     backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
@@ -164,4 +165,10 @@
 
 #feeling-lazy {
     width: 150px;
+}
+
+.folio-url {
+    color: rgba(255, 0, 162);
+    text-decoration: none;
+    font-size: 24px;
 }
