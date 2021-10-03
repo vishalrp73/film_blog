@@ -17,10 +17,12 @@ const Header = (props) => {
     const [sort, setSort] = useState(false)
     const [randNum, setRandNum] = useState(0);
     const [placeFilm, setPlaceFilm] = useState('');
-    const portfolioURL = 'www.fuckyou.com';
+    const portfolioURL = '[ placeholder-url.com ]';
 
     const backImgList = [
-        "https://film-img.s3.ap-southeast-2.amazonaws.com/slides/apoc-8.png", "https://film-img.s3.ap-southeast-2.amazonaws.com/slides/julia-fox.jpg"
+        "https://film-img.s3.ap-southeast-2.amazonaws.com/slides/apoc-8.png",
+        "https://film-img.s3.ap-southeast-2.amazonaws.com/slides/julia-fox.jpg",
+        "https://film-img.s3.ap-southeast-2.amazonaws.com/slides/solaris.png"
     ]
 
     useEffect(() => {
