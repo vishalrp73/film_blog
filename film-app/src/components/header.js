@@ -17,6 +17,7 @@ const Header = (props) => {
     const [sort, setSort] = useState(false)
     const [randNum, setRandNum] = useState(0);
     const [placeFilm, setPlaceFilm] = useState('');
+    const [randFilm, setRandFilm] = useState({});
     const portfolioURL = '[ placeholder-url.com ]';
 
     const backImgList = [
@@ -56,6 +57,7 @@ const Header = (props) => {
 
     }, [searchTerm])
 
+
     const handleAlphaSort = () => {
         setSort(1)
     }
@@ -72,6 +74,15 @@ const Header = (props) => {
 
     const handleRandom = () => {
         setSort(3)
+
+        let randomNum = Math.floor(Math.random() * films.length - 0)
+        try {
+            let temp  = films[randomNum].title
+            setRandFilm(temp)
+        } catch (error) {
+            console.log(error)
+        }
+
     }
 
     return (
@@ -112,7 +123,14 @@ const Header = (props) => {
             </div>
 
 
-            <Core display = {results} films = {films} search = {searchTerm} genres = {genres} alphaSort = {alpha} sort = {sort} years = {years} />
+            <Core display = {results} 
+                    films = {films}
+                    search = {searchTerm} 
+                    genres = {genres} 
+                    alphaSort = {alpha} 
+                    sort = {sort} 
+                    years = {years} 
+                    randFilm = {randFilm} />
 
         </div>
     )

@@ -23,6 +23,7 @@ const Core = (props) => {
         setAlphaList(props.alphaSort)
         setSort(props.sort)
         setYears(props.years)
+        setRandFilm(props.randFilm)
 
     }, [props])
 
