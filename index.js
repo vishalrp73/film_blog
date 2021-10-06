@@ -6,14 +6,13 @@ const app = express();
 const Int32 = require('mongoose-int32').loadType(mongoose);
 const Double = require('@mongoosejs/double');
 const path = require('path');
+const dotenv = require('dotenv').config();
 
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
-mongoose.connect(
-    'mongodb+srv://vishal:5MY8O1huE47UAqdF@filmreviewcluster0.bz72g.mongodb.net/film-list'
-).then (console.log('Database connection successful !'));
+mongoose.connect(process.env.MONGO_STRING).then (console.log('Database connection successful !'));
 
 
 const filmSchema = {
