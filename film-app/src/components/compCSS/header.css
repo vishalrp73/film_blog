@@ -1,3 +1,6 @@
+/* HEROKU RENDER TEST FOR HEADER.CSS, IGNORE COMMENT */
+
+
 @media screen and (max-width: 650px) {
     #search__id {
         flex-direction: column;
@@ -91,7 +94,7 @@
 
 .intro-text {
     width: 50%;
-    text-align-last: center;
+    text-align: center;
     padding: 20px;
     backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
@@ -110,6 +113,12 @@
     text-align: center;
     margin: 0;
     font-size: 12px;
+}
+
+.folio-url {
+    color: rgba(255, 0, 162);
+    text-decoration: none;
+    font-size: 24px;
 }
 
 .search-wrapper {
@@ -165,10 +174,4 @@
 
 #feeling-lazy {
     width: 150px;
-}
-
-.folio-url {
-    color: rgba(255, 0, 162);
-    text-decoration: none;
-    font-size: 24px;
 }

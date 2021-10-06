@@ -141,7 +141,7 @@ const FilmSort = () => {
 
     useEffect(() => {
 
-        fetch('http://localhost:4000/films')
+        fetch('/films')
         .then (response => response.json())
         .then (json => setFilms(json))
         .catch (err => console.log(err))

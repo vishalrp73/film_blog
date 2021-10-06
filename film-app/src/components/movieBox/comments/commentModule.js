@@ -40,7 +40,7 @@ const CommentModule = (props) => {
                 comText: comment
             }
     
-            axios.post('http://localhost:4000/addComment', newComment)
+            axios.post('/addComment', newComment)
             setDisplayError(false);
             document.getElementById('display-text-content').innerHTML = 'COMMENT POSTED! REFRESH MODAL TO VIEW'
             setComFilmId();
@@ -62,9 +62,8 @@ const CommentModule = (props) => {
             comment_id: commentId
         }
 
-        axios.put('http://localhost:4000/upvote/' + id, upvoteObj);
-        document.getElementById('display-text-content').innerHTML = `Yeah sorry, you're going to have to refresh the modal to view the upvotes,
-                                                                    we're still pretty primitive here right now.`
+        axios.put('/upvote/' + id, upvoteObj);
+        document.getElementById('display-text-content').innerHTML = `WE'RE REAL PRIMITIVE HERE RIGHT NOW SORRY, YOU'LL HAVE TO REFRESH THE MODAL TO VIEW UPVOTES`
     }
 
     const handleDown = (id, commentId) => {
@@ -74,9 +73,8 @@ const CommentModule = (props) => {
             comment_id: commentId
         }
 
-        axios.put('http://localhost:4000/downvote/' + id, downvoteObj);
-        document.getElementById('display-text-content').innerHTML = `Yeah sorry, you're going to have to refresh the modal to view the downvotes,
-                                                                    we're still pretty primitive here right now.`
+        axios.put('/downvote/' + id, downvoteObj);
+        document.getElementById('display-text-content').innerHTML = `WE'RE REAL PRIMITIVE HERE RIGHT NOW SORRY, YOU'LL HAVE TO REFRESH THE MODAL TO VIEW DOWNVOTES`
 
     }
 

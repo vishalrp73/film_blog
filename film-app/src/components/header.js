@@ -88,8 +88,9 @@ const Header = (props) => {
                                             Welcome to my film blog - created from scratch using React, Express.js and MongoDB !<br />
                                             Further documentation relating to the production process can be found on my personal website at:<br />
                                             <a href = '#' className = 'folio-url'>{portfolioURL}</a><br/>
-                                            ALL graphics were lovingly hand-made (unlike the CGI graphics those damn Hollywood studios spew out!) so don't sue me bruh 😁<br />
-                                            Also all these reviews were OFF THE CUFF so expect plenty of grammatical errors because who needs proof-reading?
+                                            NOW WITH HAND-CRAFTED GRAPHICS JUST FOR YOU! (Unlike those pesky CGI graphics Hollywood spews out)<br />
+                                            WARN: Currently only 20 films have been reviewed <i>(including Apocalypse Now, Thief and Children of Men) </i>
+                                            - the rest will be updated in the coming weeks
                 </p>
 
                 <p className = 'intro-mob' id = 'intro_resp'>Welcome, tiny screen user. Are you an infant? Do you think it's funny to use
