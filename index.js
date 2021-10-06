@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
 mongoose.connect(
-    'mongodb+srv://vishal:5MY8O1huE47UAqdF@filmreviewcluster0.bz72g.mongodb.net/film-list'
+    ''
 ).then (console.log('Database connection successful !'));
 
 
