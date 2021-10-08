@@ -18,7 +18,7 @@ const Header = (props) => {
     const [randNum, setRandNum] = useState(0);
     const [placeFilm, setPlaceFilm] = useState('');
     const [randFilm, setRandFilm] = useState({});
-    const portfolioURL = '[ placeholder-url.com ]';
+    const portfolioURL = 'https://safe-sands-50877.herokuapp.com';
 
     const backImgList = [
         "https://film-img.s3.ap-southeast-2.amazonaws.com/slides/apoc-8.png",
@@ -98,7 +98,7 @@ const Header = (props) => {
                 <p className = 'intro-text'>Howdy friends !<br /><br />
                                             Welcome to my film blog - created from scratch using React, Express.js and MongoDB !<br />
                                             Further documentation relating to the production process can be found on my personal website at:<br />
-                                            <a href = '#' className = 'folio-url'>{portfolioURL}</a><br/>
+                                            <a href = 'https://safe-sands-50877.herokuapp.com' className = 'folio-url'>{portfolioURL}</a><br/>
                                             NOW WITH HAND-CRAFTED GRAPHICS JUST FOR YOU! (Unlike those pesky CGI graphics Hollywood spews out)<br />
                                             WARN: Currently only 20 films have been reviewed <i>(including Apocalypse Now, Thief and Children of Men) </i>
                                             - the rest will be updated in the coming weeks
