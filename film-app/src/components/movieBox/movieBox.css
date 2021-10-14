@@ -51,7 +51,7 @@
 
     #resp_headline {
         overflow-wrap: break-word;
-        font-size: 32px;
+        font-size: 28px;
     }
     #resp_detail-title {
         font-size: 14px;
@@ -360,7 +360,7 @@
 }
 
 .review-headline {
-    font-size: 48px;
+    font-size: 36px;
     text-align: center;
 }
 
